@@ -1,0 +1,16 @@
+module.exports = {
+    lightBlue: '#e4f1fe',
+    blue: '#3a539b',
+    white: '#ffffff',
+    orange: '#FF8700',
+    grayLink: '#5D4F47',
+    lightOrange: '#FCC3A5',
+    lightOrange2: '#FFE4DB',
+    black: '#000000',
+    lightGray: '#ECECEC',
+    green: '#54b265',
+    success: '#00FF00',
+    success_muted: '#9ae1a7',
+    danger: 'red',
+    default:'#755734',
+};
