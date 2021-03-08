@@ -72,6 +72,11 @@ export const upload_image = 'upload_image';
 export const GetBidOffer = 'Bid/Getbid';
 
 /**
+ * Get Last Bids Offer
+ */
+export const LastBids = 'Bid/LastBids';
+
+/**
  * Add Bid to Offer
  */
 export const AddBidding = 'Bid/AddBid';
@@ -80,3 +85,18 @@ export const AddBidding = 'Bid/AddBid';
  * Add Admin Meesage
  */
 export const AdminMeesage = 'AdminMeesage';
+
+/**
+ * Add Advertise Offer
+ */
+export const AddAdvertise = 'Advertise/create';
+
+/**
+ * git all Advertise Offers
+ */
+export const ShowAdvertise = 'Advertise/get/';
+
+/**
+ * Get Advertise Offer by ID
+ */
+export const GetAdvertise = 'Advertise/GetAdvertise';

@@ -29,7 +29,7 @@ export default function Upload({props}) {
     const [types, setTypes] = useState([]);
     const user = useSelector((state) => state.user.user);
     const [ImageLoader, setImageLoader] = useState(false)
-
+    const [Ages, setAges] = useState([]);
 
     const [data, setData] = useState({
         name: null,
@@ -106,6 +106,22 @@ export default function Upload({props}) {
             });
         });
         setTypes(typesList);
+    }, []);
+
+
+    useEffect(() => {
+       
+        const Ages= ['chick','virgin','second','third','fourth','fifth_more'];
+        const key = I18n.locale == 'ar' ? 'name_ar' : 'name_en';
+        let AgesList = [];
+        Ages.map((item) => {
+            AgesList.push({
+                    label: I18n.t(item),
+                    value: item,
+                });
+            });
+        
+        setAges(AgesList);
     }, []);
 
     const handleSubmit = () =>{
@@ -199,38 +215,16 @@ return (
                 <Text style={Presets.AddNameText}>
                      {I18n.t('Age')}
                 </Text>
-                <TextInput
-                        style={Presets.textInput2}
-                        onChangeText={(value) =>
-                            setData({...data, Age: value})
-                        }
-                        keyboardType="phone-pad"
-                        placeholder={'  Your Ad Tittle'}
-                        value={data.Age}
-                />
-            </View>
-            <View>
-                <Text style={Presets.AddNameText}>
-                     {I18n.t('Gendar')}
-                </Text>
-                <View style={{ flexDirection: 'row'}}>
-                    <View style={{ flexDirection: 'row',padding:20}}>
-                        <CheckBox
-                            value={data.sex}
-                            onValueChange={() => setData({...data, sex: true})}
-                            style={Presets.checkBox}
-                        />
-                        <Text>{I18n.t('Male')}</Text>
-                    </View>
-                    <View style={{ flexDirection: 'row',padding:20}}>
-                        <CheckBox
-                            value={!data.sex}
-                            onValueChange={() => setData({...data, sex:false})}
-                            style={Presets.checkBox}
-                        />
-                        <Text>{I18n.t('Female')}</Text>
-                    </View>
-                </View>
+                <Picker
+                    selectedValue={data.Age}
+                    style={Presets.dropdown}
+                    onValueChange={(itemValue, itemIndex) =>
+                        setData({...data, Age: itemValue})
+                    }>
+                    {Ages.map((item) => 
+                        <Picker.Item label={item.label} value={item.value} />
+                    )}
+                </Picker>
             </View>
             <View>
                 <Text style={Presets.AddNameText}>

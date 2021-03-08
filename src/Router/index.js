@@ -25,6 +25,7 @@ import Contact from "../Screens/Contact";
 import PrivacyPolicy from "../Screens/PrivacyPolicy";
 import Settings from "../Screens/Settings";
 import AdminMessage from "../Screens/MessageToAdmin";
+import AppNews from "../Screens/AppNews/index";
 // ================== Bid ======================
 import UploadIndex from "../Screens/AddOffer/index";
 import SearchBiddingIndex from'../Screens/Bidding/Search/';
@@ -33,8 +34,8 @@ import BidNewsIndex from '../Screens/BidNews/index';
 
 // ================== Advertise ======================
 import AddAdvertise from "../Screens/AddAdvertise/index";
-import Search from'../Screens/Falcon/Search';
-import Show from'../Screens/Falcon/Show';
+import Search from'../Screens/Advertise/Search';
+import Show from'../Screens/Advertise/Show';
 
 // ================== Accessories ======================
 import SearchAccessories from "../Screens/Accessories/SearchAccessories";
@@ -159,6 +160,7 @@ function App() {
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="ShowBidding" component={ShowBiddingIndex} />
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="SearchBidding" component={SearchBiddingIndex} />      
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="BidNews" component={BidNewsIndex} />      
+      <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="AppNews" component={AppNews} />      
       </Drawer.Navigator>
   );
 }

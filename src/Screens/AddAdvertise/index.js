@@ -6,7 +6,7 @@ import colors from '../../styles/colors';
 import I18n from '../../I18n';
 import {useDispatch} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {BidData,AddBid} from '../../providers/routes';
+import {BidData,AddAdvertise} from '../../providers/routes';
 import {get,post} from '../../providers/provider';
 import Loading from '../../components/Loading'
 
@@ -81,7 +81,7 @@ export default function AddAdvertiseIndex({navigation}) {
             setStatus('loading');
             // if (valid) {
                 const optoins = {
-                    route: AddBid,
+                    route: AddAdvertise,
                     body: data,
                 };
                 const response = await post(optoins);

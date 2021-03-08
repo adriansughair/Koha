@@ -16,7 +16,7 @@ export default function UploadMessage({props}) {
 
     const Done = () => {
         setShow(false);
-        props.navigation.navigate('SearchBidding');
+        // props.navigation.navigate('SearchBidding');
     };
 
 return (
@@ -34,14 +34,14 @@ return (
                     }}> 
                         <View style={Presets.PopupTitel}>
                                              <Text style={Presets.PopupTitelText}>
-                                              Upload Pet
+                                               {I18n.t('Add_Ads')}
                                              </Text>
                                         </View>
                                         <View style={Presets.AlertMessage}>
                                              <Text 
                                                  style={Presets.AlertText}
                                                 >
-                                                Your Ads has been created
+                                                {I18n.t('Advertise_message')}
                                             </Text>
                                             <View style={{borderRadius:50,
                                                           borderColor:colors.success,
@@ -62,7 +62,7 @@ return (
                                                 onPress={() => Done()}
                                         >
                                             <Text style={Presets.PopupText}>
-                                                OK
+                                              {I18n.t('Ok')}
                                             </Text>
                                         </TouchableOpacity>
                                     </View>

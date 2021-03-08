@@ -67,20 +67,20 @@ export default function Home({props}) {
                       <View style={Presets.category}>
                            <TouchableOpacity 
                                 style={Presets.Subcategory}
-                                // onPress={() => handleSubmit('')}
+                                onPress={() => props.navigation.push('App', { screen: 'AppNews'})}
                                 >
                                 <Image 
                                     style={Presets.Imgcategory}
                                     source={require('../../assest/img/news1.png')}/>
                                 <View style={Presets.Itemcategory}>
                                      <Text style={Presets.Textcategory}>
-                                     {I18n.t('News')}
+                                     {I18n.t('AppNews')}
                                     </Text>
                                 </View>
                            </TouchableOpacity>
                            <TouchableOpacity 
                                 style={Presets.Subcategory}
-                                onPress={() => handleSubmit('Advertise')}
+                                onPress={() => props.navigation.push('App', { screen: 'Search'})}
                                 >
                                 <Image 
                                     style={Presets.Imgcategory}

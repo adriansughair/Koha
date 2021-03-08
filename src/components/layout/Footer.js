@@ -21,7 +21,8 @@ export default function Footer() {
 
     const handleRoute = (name,navigation) => {
         // if (name != useRoute().name) {
-            navigation.navigate(name);
+            // navigation.navigate(name);
+            navigation.push('App', { screen: name});
         // }
     };
 
@@ -47,8 +48,21 @@ export default function Footer() {
                     }
                 />
             </TouchableOpacity>
+            {user.loggedIn ?
             <TouchableOpacity 
-                onPress={() => (user.loggedIn && user.user.roles == 'admin') ? handleRoute('AddAdvertise',navigation):handleRoute('Login',navigation)}
+            onPress={() =>  user.user.roles == 'user' ? handleRoute('AddAdvertise',navigation):handleRoute('AddOffer',navigation)}
+            >
+                <Icon 
+                    name="plus-square-o" 
+                    size={25} 
+                    color={
+                        currentScene == 'AddAdvertise' ? colors.default : '#DAD7E0'
+                    } 
+                    />
+            </TouchableOpacity>
+            :
+            <TouchableOpacity 
+                onPress={() => handleRoute('Login',navigation)}
                 >
                     <Icon 
                         name="plus-square-o" 
@@ -58,6 +72,7 @@ export default function Footer() {
                         } 
                         />
             </TouchableOpacity>
+            }
             {!user.loggedIn && (
                 <TouchableOpacity 
                     onPress={() => handleRoute('Login',navigation)}

@@ -15,6 +15,7 @@ export default {
     privacy_Police_check:'By Signing up i Agree to the', 
     privacy_Police_link:'term and Condition & privacy Police',
     News:'News',
+    AppNews:'App News',
     Advertise:'Advertise',
     Hunting_Accessories:'Hunting Accessories',
     Bidding_News:'Bidding News',
@@ -47,5 +48,12 @@ export default {
     second:'second',
     third:'third',
     fourth:'fourth',
-    fifth_more:'fifth more'
+    fifth_more:'fifth more',
+    Ok:'OK',
+    Add_Adverties:'Add new Ads',
+    Adver_Name:'Advertise Name',
+    price:'price',
+    Add_price:'Add price',
+    Advertise_message:'Thanks for adding your offer, it will be published once we review it! Good luck',
+    Detail:'Details',
 };

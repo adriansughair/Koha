@@ -90,7 +90,7 @@ export default function UploadAdvertise({props}) {
         props.data.cites.map((item) => {
             citesList.push({
                 label: item[key],
-                value: item[key],
+                value: item.id,
             });
         });
         setCities(citesList);
@@ -118,7 +118,7 @@ export default function UploadAdvertise({props}) {
         props.data.types.map((item) => {
             typesList.push({
                 label: item[key],
-                value: item[key],
+                value: item.id,
             });
         });
         setTypes(typesList);
@@ -140,7 +140,7 @@ return (
         <View style={{width:'90%'}}>
             <View style={{marginTop:15,marginBottom:25}}>
                 <Text style={{fontSize:27,fontFamily: 'Montserrat-Bold',color:colors.default}}>
-                    {I18n.t('Add_Ads')}
+                    {I18n.t('Add_Adverties')}
                 </Text>
             </View>
             {ImageLoader ? <Loading color={colors.orange} /> :
@@ -171,14 +171,14 @@ return (
             }
             <View>
                 <Text style={Presets.AddNameText} >
-                    {I18n.t('Ad_Name')}
+                    {I18n.t('Adver_Name')}
                 </Text>
                 <TextInput
                         style={Presets.textInput2}
                         onChangeText={(value) =>
                             setData({...data, name: value})
                         }
-                        placeholder={I18n.t('Ad_Name')}
+                        placeholder={I18n.t('Adver_Name')}
                         value={data.name}
                 />
             </View>
@@ -229,7 +229,7 @@ return (
             </View>
             <View>
                 <Text style={Presets.AddNameText}>
-                   {I18n.t('Starting_price')}
+                   {I18n.t('price')}
                 </Text>
                 <TextInput
                         style={Presets.textInput2}
@@ -237,7 +237,7 @@ return (
                             setData({...data, price: value})
                         }
                         keyboardType="phone-pad"
-                        placeholder={I18n.t('Starting_price')}
+                        placeholder={I18n.t('Add_price')}
                         value={data.price}
                 />
             </View>

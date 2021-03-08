@@ -70,11 +70,8 @@ export default function SearchView({props}) {
                                     {item.name}
                                 </Text>
                                 <View style={{flexDirection: 'row'}}>
-                                    <Text style={[Presets.offerProprty,{backgroundColor:'#3969F626',color:'#3969F6',}]}>
-                                        {item.sex}
-                                    </Text>
                                     <Text style={[Presets.offerProprty,{backgroundColor:'#F8C05531',color:'#F8C055',}]}>
-                                        {item.Age} Years 
+                                    {I18n.t(item.Age)} 
                                     </Text>
                                 </View>
                                 <View style={Presets.Bidding}>

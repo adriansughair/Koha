@@ -562,6 +562,16 @@ module.exports = StyleSheet.create({
         flexDirection: 'row',
         elevation: 10,
     },
+    offers2:{
+        height:height*0.2,
+        width:'95%',
+        margin:10,
+        borderRadius:20,
+        backgroundColor:colors.white,
+        alignItems:"center",
+        flexDirection: 'row',
+        elevation: 10,
+    },
     offerContinar:{
         width:'90%',
         marginTop:20,
@@ -577,6 +587,15 @@ module.exports = StyleSheet.create({
 
     offerProprty:{
         padding:17,
+        paddingBottom:5,
+        paddingTop:5,
+        borderRadius:15,
+        fontSize:13,
+        margin:5,
+    },
+
+    offerProprty_Adver:{
+        padding:10,
         paddingBottom:5,
         paddingTop:5,
         borderRadius:15,

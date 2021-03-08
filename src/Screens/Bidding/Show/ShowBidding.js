@@ -88,29 +88,9 @@ export default function ShowBidding({props}) {
                                         {data.name}
                                     </Text>
                                 </View>
-                                <View style={Presets.Contact}>
-                                    <TouchableOpacity>
-                                        <Image 
-                                            style={Presets.ContactImage}
-                                            source={require('../../../assest/img/icons2/whatsapp.png')}
-                                         />
-                                    </TouchableOpacity>
-                                    <TouchableOpacity>
-                                        <Image 
-                                            style={Presets.ContactImage}
-                                            source={require('../../../assest/img/icons2/telephone.png')}
-                                         />
-                                    </TouchableOpacity>
-                                    <TouchableOpacity>
-                                        <Image 
-                                            style={Presets.ContactImage}
-                                            source={require('../../../assest/img/icons2/Message.png')}
-                                         />
-                                    </TouchableOpacity>
-                                </View>
                             </View>
                             <View>
-                                    <Text style={Presets.price2} >{data.estimate_price}QAR </Text>                        
+                                    <Text style={Presets.price2} >{data.estimate_price} QAR </Text>                        
                             </View>
                             <View style={{flexDirection: 'row',justifyContent:'space-between',margin:5}}>
                                 <View style={Presets.InfoLoc3}>
@@ -124,20 +104,16 @@ export default function ShowBidding({props}) {
                             </View>
                             <View style={Presets.About}>
                                 <Text style={Presets.Detail}>
-                                    Detail
+                                {I18n.t('Detail')} 
                                 </Text>
                             </View>
                             <View style={{flexDirection: 'row',justifyContent:'space-between',width:'75%',margin:5}}>
                                 <View>
-                                    <Text style={Presets.DetailHead}>Sex</Text>
-                                    <Text style={Presets.DetailVal}>{data.sex}</Text> 
+                                    <Text style={Presets.DetailHead}>{I18n.t('Age')}</Text>
+                                    <Text style={Presets.DetailVal} >{I18n.t(data.Age)}</Text>
                                 </View>
                                 <View>
-                                    <Text style={Presets.DetailHead}>Age</Text>
-                                    <Text style={Presets.DetailVal} >{data.Age} Years</Text>
-                                </View>
-                                <View>
-                                    <Text style={Presets.DetailHead}>Type</Text>
+                                    <Text style={Presets.DetailHead}>{I18n.t('Type_Falcon')}</Text>
                                     <Text style={Presets.DetailVal} >{data.type}</Text>
                                 </View>
                             </View>
