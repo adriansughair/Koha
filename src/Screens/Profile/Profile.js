@@ -35,7 +35,7 @@ export default function Profile({props}) {
                             <View style={[Presets.InfoLoc,{paddingTop:10,}]}>
                                 <Icon name="map-marker" size={15} color={'#DAD7E0'}/>
                                 <Text style={Presets.TextLoc}>
-                                     {data.location !==null ? data.location : '  Undefined'}
+                                     {data.location !== null ? data.location : I18n.t('Undefined')}
                                 </Text>
                             </View>
                             <View style={[Presets.InfoLoc,{paddingTop:10}]}>
@@ -47,7 +47,7 @@ export default function Profile({props}) {
                    <View style={Presets.AboutView}>
                             <View style={Presets.AboutHead}>
                                 <Text style={Presets.AboutHeadText}>
-                                        About
+                                        {I18n.t('About')}
                                 </Text>
                                 <TouchableOpacity onPress={() => ShowUpdate()}>
                                     <Icon
@@ -63,7 +63,7 @@ export default function Profile({props}) {
                                     style={Presets.AboutText}
                                     textAlignVertical={'top'}
                                 >
-                                    About me
+                                   {I18n.t('About_me')}
                                 </Text>
                             </View>
                     </View>

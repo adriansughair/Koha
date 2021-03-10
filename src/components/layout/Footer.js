@@ -21,8 +21,8 @@ export default function Footer() {
 
     const handleRoute = (name,navigation) => {
         // if (name != useRoute().name) {
-            // navigation.navigate(name);
-            navigation.push('App', { screen: name});
+            navigation.navigate(name);
+            // navigation.replace('', { screen: name});
         // }
     };
 

@@ -11,8 +11,7 @@ import {
   Dimensions
 } from 'react-native';
 import { Picker } from '@react-native-community/picker'
-import { Presets, Colors, sizing } from '../styles';
-
+import { Presets, Colors } from '../styles';
 import I18n from '../I18n';
 import RNRestart from 'react-native-restart';
 // import Loading from '../../components/Loading';
@@ -59,7 +58,6 @@ export default function Settings() {
         console.log(I18n.locale);
         setSelectedValue(I18n.locale.substring(0, 2));
         I18n.locale = I18n.locale.substring(0, 2);
-
         setIsNew(true);
       }
       setStatus('success');
@@ -80,7 +78,7 @@ return(
             <Text style={selectedValue == 'ar' && {backgroundColor: Colors.summer_sky,margin:15}}>العربية</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => setSelectedValue('en')}>
-            <Text style={selectedValue == 'en' && {backgroundColor: Colors.summer_sky,margin:15}}>English</Text>
+            <Text style={selectedValue == 'en' && {backgroundColor: Colors.summer_sky, margin:15}}>English</Text>
           </TouchableOpacity>
         </View>
         <TouchableOpacity

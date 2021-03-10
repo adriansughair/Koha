@@ -1,25 +1,25 @@
 // @ts-nocheck
+
 import React, {useState,useEffect} from 'react';
 import {TouchableOpacity, View, Text, TextInput,ScrollView,ImageBackground,Dimensions,Image,Modal} from 'react-native';
-import {Presets} from '../../../styles';
-import Layout from '../../../components/layout/Layout';
+import {Presets} from '../../styles';
+import Layout from '../../components/layout/Layout';
 // import Loading from '../components/Loading'
-import colors from '../../../styles/colors';
-import I18n from '../../../I18n';
+import colors from '../../styles/colors';
+import I18n from '../../I18n';
 import {useDispatch , useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { RadioButton } from 'react-native-paper';
 import { CommonActions } from '@react-navigation/native';
-import { Show, Sorting , Locations , Price , Age } from '../../../actions';
+import { Show, Sorting , popUpFillter  , Locations , Price} from '../../actions/AccessoriesActions';
 
 const height = Dimensions.get('window').height;
 
-export default function BiddingSort() {
+export default function SortAccessories() {
     const dispatch = useDispatch();
-    const value = useSelector(state => state.user.Show);
-const test = useSelector(state => state.user.Sort);
+    const value = useSelector(state => state.access.Show);
     const [show, setShow] = useState(false);
-   
+
     const [data, setData] = useState({
         sort: ''
     });
@@ -36,7 +36,7 @@ const test = useSelector(state => state.user.Sort);
     const ClearSort = () => {
         dispatch(Locations(0));
         dispatch(Price(0));
-        dispatch(Age(''));
+        dispatch(Sorting(''));
     }
 
     return (
@@ -58,7 +58,7 @@ const test = useSelector(state => state.user.Sort);
                                              <Text style={Presets.PopupTitelText}>  Sort By</Text>
                                         </View>
                                         <View>
-                                           <Text style={{color : 'brown' , fontSize : 18 , fontWeight : 'bold'}}>{test}</Text>
+                                           {/* <Text style={{color : 'brown' , fontSize : 18 , fontWeight : 'bold'}}>{test}</Text> */}
                                         </View>
                                         <View style={Presets.AlertMessage}>
                                             <View style={Presets.RadioItme}>
@@ -105,6 +105,6 @@ const test = useSelector(state => state.user.Sort);
                                             </View>
                                     </View>
                                 </View>
-    </Modal>
-    );
+                                </Modal>
+);
 }

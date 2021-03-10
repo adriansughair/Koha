@@ -36,3 +36,60 @@ export const removeAppData = () => {
         type: 'REMOVE_APP_DATA',
     };
 };
+
+export const Show = (flag) => {
+    return {
+       type : 'POP_UP' , 
+       payload : flag
+    };
+};
+
+export const Sorting = (value) => {
+return { 
+ type : 'SORT' , 
+ payload : value 
+};
+};
+
+export const popUpFillter = (flag) => {
+    return {
+        type : 'POP_UP_FILLTER' , 
+        payload : flag
+    };
+};
+
+export const Fillter = (value) => {
+    return {
+     type : 'FILLTER' ,
+     Value : value
+    };
+};
+
+export const City = (id) => {
+return { 
+    type : 'STORE' , 
+    payload : id
+};
+};
+
+
+export const Price = (Num) => {
+    return {
+        type : 'PRICE' , 
+        payload : Num
+    };
+}; 
+
+export const Locations = (id) => {
+    return {
+        type : 'LOCTIONS' ,
+        payload : id
+    };
+};
+
+export const Age = (value) => {
+    return {
+    type :'AGE' ,
+    payload :value
+    };
+};

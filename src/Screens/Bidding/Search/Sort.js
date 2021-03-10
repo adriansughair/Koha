@@ -1,25 +1,45 @@
 import React, {useState,useEffect} from 'react';
-import {Ra,CheckBox,Slider,StyleSheet,TouchableOpacity, View, Text, TextInput,ScrollView,ImageBackground,Dimensions,Image,Modal} from 'react-native';
+import {TouchableOpacity, View, Text, TextInput,ScrollView,ImageBackground,Dimensions,Image,Modal} from 'react-native';
 import {Presets} from '../../../styles';
 import Layout from '../../../components/layout/Layout';
 // import Loading from '../components/Loading'
 import colors from '../../../styles/colors';
 import I18n from '../../../I18n';
-import {useDispatch} from 'react-redux';
+import {useDispatch , useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { RadioButton } from 'react-native-paper';
+import { CommonActions } from '@react-navigation/native';
+import { Show, Sorting , Locations , Price , Age } from '../../../actions/BidActions';
 
 const height = Dimensions.get('window').height;
 
-export default function BiddingSort({navigation , route}) {
+export default function BiddingSort() {
     const dispatch = useDispatch();
-
+    const value = useSelector(state => state.bid.Show);
+const test = useSelector(state => state.bid.Sort);
     const [show, setShow] = useState(false);
    
     const [data, setData] = useState({
-        sort:null
+        sort: ''
     });
    
+   useEffect(() => {
+       console.log("Value is Bid Reducer")
+       console.log(value);
+        setShow(value);
+   }, [value])
+   
+    const SortData = () => {
+        dispatch(Sorting(data.sort));
+        dispatch(Show(false));
+    }
+
+    const ClearSort = () => {
+        dispatch(Locations(0));
+        dispatch(Price(0));
+        dispatch(Age(''));
+    }
+
     return (
         <Modal transparent={true}  visible={show} >
                                 <View style={{backgroundColor:"#000000aa",flex:1}} >
@@ -38,52 +58,52 @@ export default function BiddingSort({navigation , route}) {
                                              <Icon name="sort-amount-desc" size={20} color={'#755734'}/>
                                              <Text style={Presets.PopupTitelText}>  Sort By</Text>
                                         </View>
+                                        <View>
+                                           <Text style={{color : 'brown' , fontSize : 18 , fontWeight : 'bold'}}>{test}</Text>
+                                        </View>
                                         <View style={Presets.AlertMessage}>
                                             <View style={Presets.RadioItme}>
                                                 <RadioButton
                                                     style={{color:colors.default}}
                                                     value="Newest"
                                                     status={ data.sort === 'Newest' ? 'checked' : 'unchecked' }
-                                                    onPress={() => setData ({...data, sort: 'Newest'})}
+                                                    onPress={() => setData ({sort: 'Newest'})}
                                                 /> 
                                                 <Text style={Presets.RadioText}>Newest</Text>
                                             </View>
                                             <View style={Presets.RadioItme}>
                                                 <RadioButton
                                                     value="Nearest"
-                                                    status={ data.sort === 'Nearest' ? 'checked' : 'unchecked' }
-                                                    onPress={() => setData ({...data, sort: "Nearest"})}
+                                                    status={ data.sort === 'Oldest' ? 'checked' : 'unchecked' }
+                                                    onPress={() => setData ({sort: "Oldest"})}
                                                 />
-                                                <Text style={Presets.RadioText}>Nearest</Text>
+                                                <Text style={Presets.RadioText}>Oldest</Text>
                                             </View>
                                             <View style={Presets.RadioItme}>
                                                 <RadioButton
                                                     value="Hight Price"
                                                     status={ data.sort === 'Hight Price' ? 'checked' : 'unchecked' }
-                                                    onPress={() => setData ({...data, sort: 'Hight Price'})}
+                                                    onPress={() => setData ({sort: 'Hight Price'})}
                                                 />
                                                 <Text style={Presets.RadioText} >Hight Price</Text>
                                             </View>
                                             <View style={Presets.RadioItme}>
                                                 <RadioButton
                                                     value="Low Price"
-                                                    status={ data.sort === 'second' ? 'checked' : 'unchecked' }
-                                                    onPress={() => setData ({...data, sort: 'Low Price'})}
+                                                    status={ data.sort === 'Low Price' ? 'checked' : 'unchecked' }
+                                                    onPress={() => setData ({sort: 'Low Price'})}
                                                 />
                                                 <Text style={Presets.RadioText}>Low Price</Text>
                                             </View>
-                                            <View style={Presets.RadioItme}>
-                                                <RadioButton
-                                                    value="Latest Product"
-                                                    status={ data.sort === 'Latest Product' ? 'checked' : 'unchecked' }
-                                                    onPress={() => setData ({...data, sort: 'Latest Product'})}
-                                                />
-                                                <Text style={Presets.RadioText}>Latest Product</Text>
                                             </View>
-                                        </View>
-                                        <TouchableOpacity style={Presets.PopupButtom} onPress={() => SortData()}>
+                                            <View style={{display : 'flex' , flexDirection : 'row' , justifyContent : 'center' , padding : 20}}>
+                                        <TouchableOpacity style={[Presets.PopupButtom , {margin : 12}]} onPress={() => SortData()}>
                                             <Text style={Presets.PopupText}>OK</Text>
                                         </TouchableOpacity>
+                                        <TouchableOpacity style={[Presets.PopupButtom , {margin : 12}]} onPress={() => ClearSort()}>
+                                            <Text style={Presets.PopupText}>Clear Sort</Text>
+                                        </TouchableOpacity>
+                                            </View>
                                     </View>
                                 </View>
     </Modal>

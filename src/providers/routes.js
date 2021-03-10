@@ -100,3 +100,43 @@ export const ShowAdvertise = 'Advertise/get/';
  * Get Advertise Offer by ID
  */
 export const GetAdvertise = 'Advertise/GetAdvertise';
+
+
+/**
+ * get For Accessories
+ */
+export const GetAccessories = 'Accessorie/show/';
+
+
+/**
+ * get Accessorie by id
+ */
+export const AccessorieById = 'Accessorie/Get';
+
+
+/**
+ * Sorting Advertise By Value
+ */
+
+export const SortingAdvertise = 'Advertise/Filter';
+
+
+/**
+ * Sorting Accessorie Filter
+ */
+export const AccessorieFilter = 'Accessorie/Filter';
+
+/**
+ * Sorting Bid/Filter
+ */
+export const BidFilter = 'Bid/Filter';
+
+/**
+ * Sorting Bid/Filter
+ */
+ export const NewsShow = 'News/show';
+
+ /**
+ * Sorting Bid/Filter
+ */
+export const NewsGet = 'News/get/';

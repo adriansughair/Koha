@@ -1,24 +1,28 @@
 import React, {useState,useEffect} from 'react';
-import {Ra,CheckBox,Slider,StyleSheet,TouchableOpacity, View, Text, TextInput,ScrollView,ImageBackground,Dimensions,Image,Modal} from 'react-native';
+import {StyleSheet,TouchableOpacity, View, Text, TextInput,ScrollView,ImageBackground,Dimensions,Image,Modal} from 'react-native';
 import {Presets} from '../../../styles';
 import Layout from '../../../components/layout/Layout';
 // import Loading from '../components/Loading'
 import colors from '../../../styles/colors';
 import I18n from '../../../I18n';
-import {useDispatch} from 'react-redux';
+import {useDispatch , useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {basedomain} from '../../../providers/routes';
 import CountDown from 'react-native-countdown-component';
+import Sort from './Sort';
+import Filtes from './Filters';
+import { popUpFillter, Show } from '../../../actions';
 
 const height = Dimensions.get('window').height;
 
 export default function SearchView({props}) {
     const dispatch = useDispatch();
-
+const value = useSelector(state => state.user.Show);
+console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" , value);
     const [show, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
 
-    console.log(props.data);
+    // console.log(props.data);
 
     const [data, setData] = useState({
         name: null,
@@ -31,7 +35,7 @@ export default function SearchView({props}) {
     const Footer = () => {
         return  <View style={styles.footerContainer}>
        <TouchableOpacity style={styles.footeritem} 
-            // onPress={() => setShow(true)}
+            onPress={() => dispatch(Show(true))}
             >
             <Icon
                 name="sort-amount-desc"
@@ -41,7 +45,7 @@ export default function SearchView({props}) {
             <Text>Sort By</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.footeritem} 
-        // onPress={() => setShow2(true)}
+        onPress={() => dispatch(popUpFillter(true))}
         >
           <Icon
                 name="filter"
@@ -110,6 +114,8 @@ export default function SearchView({props}) {
                 )}  
             </ScrollView>    
             {Footer()}
+            <Sort />
+            <Filtes />
     </ImageBackground>
     );
 }

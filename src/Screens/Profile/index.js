@@ -8,6 +8,7 @@ import Loading from '../../components/Loading'
 import Profile from'./Profile';
 import ProfileModal from'./ProfileModal';
 import Layout from '../../components/layout/Layout';
+import I18n from '../../I18n';
 
 
 
@@ -24,8 +25,7 @@ export default function ProfileIndex({navigation}) {
 
     const handleResponse = (response, json) => {
         console.log(json);
-        console.log(response);
-        
+        console.log(response);      
         switch (response.status) {
             case 200:
                 setData(json.data);

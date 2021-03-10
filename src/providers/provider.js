@@ -47,7 +47,6 @@ export const get = async (options) => {
 
 export const post = async (options) => {
     const url = getUrl(options);
-    console.log(url);
     console.log(options);
     const response = await fetch(url, {
         method: 'POST',

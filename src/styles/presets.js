@@ -337,7 +337,9 @@ module.exports = StyleSheet.create({
     AboutText:{
         marginTop: 10,
         color:colors.grayLink,
-        width:'100%'
+        width:'100%' , 
+        fontSize : 18 , 
+        fontWeight : 'bold'
     },
     StartImageView:{
         width:"100%",

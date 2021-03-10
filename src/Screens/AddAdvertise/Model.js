@@ -16,7 +16,7 @@ export default function UploadMessage({props}) {
 
     const Done = () => {
         setShow(false);
-        // props.navigation.navigate('SearchBidding');
+        props.navigation.navigate('Home');
     };
 
 return (

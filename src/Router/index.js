@@ -40,14 +40,13 @@ import Show from'../Screens/Advertise/Show';
 // ================== Accessories ======================
 import SearchAccessories from "../Screens/Accessories/SearchAccessories";
 import ShowAccessories from "../Screens/Accessories/ShowAccessories";
+import SerachNews from '../Screens/News/SerachNews';
 
 export default function index() {
     const user = useSelector((state) => state.user);
     const firstScreens = useSelector((state) => state.app.show);
-    const Stack = createStackNavigator();
-    const Drawer = createDrawerNavigator();
-    
-    console.log(firstScreens);
+    const Stack = createStackNavigator();    
+    // console.log(firstScreens);
     
     return (
         <NavigationContainer screenOptions={{ headerShown: false }}>
@@ -101,7 +100,7 @@ function App() {
           options={{
             headerShown: false,
             drawerIcon: () => (<Icon name="user" size={22} color={colors.default}/>),
-            drawerLabel: 'Profile' 
+            drawerLabel: I18n.t('Profile')  
           }} 
           name="Profile" 
           component={ProfileIndex} 
@@ -110,7 +109,7 @@ function App() {
           options={{
             headerShown: false,
             drawerIcon: () => (<Icon name="envelope" size={22} color={colors.default}/>),
-            drawerLabel: 'Message Admin' 
+            drawerLabel: I18n.t('Message_Admin') 
           }} 
           name="AdminMessage" 
           component={AdminMessage} 
@@ -119,7 +118,7 @@ function App() {
           options={{
             headerShown: false,
             drawerIcon: () => (<Icon name="phone-square" size={22} color={colors.default}/>),
-            drawerLabel: 'Contact Us' 
+            drawerLabel: I18n.t('Contact_Us') 
           }} 
           name="Contact" 
           component={Contact} 
@@ -128,7 +127,7 @@ function App() {
           options={{
             headerShown: false,
             drawerIcon: () => (<Icon name="info-circle" size={22} color={colors.default}/>),
-            drawerLabel: 'About' 
+            drawerLabel: I18n.t('About') 
           }} 
           name="About" 
           component={About} 
@@ -137,7 +136,7 @@ function App() {
           options={{
             headerShown: false,
             drawerIcon: () => (<Icon name="lock" size={22} color={colors.default}/>),
-            drawerLabel: 'Privacy & Policy' 
+            drawerLabel: I18n.t('Privacy_Policy') 
           }} 
           name="PrivacyPolicy" 
           component={PrivacyPolicy} 
@@ -146,11 +145,12 @@ function App() {
           options={{
             headerShown: false,
             drawerIcon: () => (<Icon name="cog" size={22} color={colors.default}/>),
-            drawerLabel: 'Settings' 
+            drawerLabel: I18n.t('Settings') 
           }} 
           name="Settings" 
           component={Settings} 
       />
+
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="AddOffer" component={UploadIndex} />
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="AddAdvertise" component={AddAdvertise} />
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="Search" component={Search} />
@@ -160,7 +160,9 @@ function App() {
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="ShowBidding" component={ShowBiddingIndex} />
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="SearchBidding" component={SearchBiddingIndex} />      
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="BidNews" component={BidNewsIndex} />      
-      <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="AppNews" component={AppNews} />      
+      <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="AppNews" component={AppNews} />
+      <Drawer.Screen options={{headerShown : false, drawerLabel: () => null}} name="SerachNews"  component={SerachNews} />
+            
       </Drawer.Navigator>
   );
 }

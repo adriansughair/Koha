@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {useState} from 'react';
 import {TouchableOpacity, View, Text, TextInput,ScrollView,ImageBackground,Dimensions,Image} from 'react-native';
 import {Presets} from '../../styles';
@@ -21,7 +22,7 @@ export default function Home({props}) {
     const [activeIndex, setActiveIndex] = useState();
 
     const handleSubmit = (name)=>{
-        console.log(name)
+        // console.log(name)
         navigation.navigate('Search');
     };
 
@@ -93,7 +94,7 @@ export default function Home({props}) {
                            </TouchableOpacity>
                       </View> 
                       <View style={Presets.category}>
-                           <View style={Presets.Subcategory}>
+                           <TouchableOpacity onPress={() => navigation.navigate('SerachNews')} style={Presets.Subcategory}>
                                 <Image 
                                     style={Presets.Imgcategory}
                                     source={require('../../assest/img/news2.png')}/>
@@ -102,7 +103,7 @@ export default function Home({props}) {
                                     {I18n.t('News')}
                                     </Text>
                                 </View>
-                           </View>
+                                </TouchableOpacity>
                            <TouchableOpacity 
                                 style={Presets.Subcategory}
                                 onPress={() => navigation.navigate('SearchAccessories')}>

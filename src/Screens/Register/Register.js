@@ -13,6 +13,7 @@ export default function Register({props}) {
         phone: null,
         password: null,
         confirmPassword: null,
+        email:null,
         isSelected: null,
     });
 
@@ -54,8 +55,16 @@ export default function Register({props}) {
                             onChangeText={(value) =>
                                 setData({...data, name: value})
                             }
-                            placeholder='Name'
+                            placeholder={I18n.t('name')}
                             value={data.name}
+                        />
+                        <TextInput
+                            style={Presets.textInput}
+                            onChangeText={(value) =>
+                                setData({...data, email: value})
+                            }
+                            placeholder={I18n.t('Email')}
+                            value={data.email}
                         />
                         <TextInput
                             style={Presets.textInput}
@@ -81,7 +90,7 @@ export default function Register({props}) {
                             onChangeText={(value) =>
                                 setData({...data, confirmPassword: value})
                             }
-                            placeholder="confirm password"
+                            placeholder={I18n.t('confirm_password')}
                             value={data.confirmPassword}
                         />
                         <View

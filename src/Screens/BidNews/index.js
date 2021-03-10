@@ -10,7 +10,7 @@ import BidNews from './BidNews';
 export default function BidNewsIndex({navigation}) {
     
     const height = Dimensions.get('window').height;
-    const [ isLoading, setLoad]= useState(false)
+    const [ isLoading, setLoad]= useState(false);
     const [data, setData] = useState({});
     const [status, setStatus] = useState('loading');
     

@@ -1,42 +1,31 @@
 import React, {useState,useEffect} from 'react';
 import {Slider,StyleSheet,TouchableOpacity, View, Text,Dimensions,Image,Modal , Picker, Platform} from 'react-native';
-import {Presets} from '../../../styles';
-import Layout from '../../../components/layout/Layout';
-import colors from '../../../styles/colors';
-import I18n from '../../../I18n';
+import {Presets} from '../../styles';
+import Layout from '../../components/layout/Layout';
+// import Loading from '../components/Loading'
+import colors from '../../styles/colors';
+import I18n from '../../I18n';
 import {useDispatch , useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CheckBox from '@react-native-community/checkbox';
 import { RadioButton } from 'react-native-paper';
-import { Locations, popUpFillter, Price  , Age} from '../../../actions/BidActions';
+import { Show, Sorting , popUpFillter, Locations , Price , Age} from '../../actions/AccessoriesActions';
 
 const height = Dimensions.get('window').height;
 
-export default function BiddingFiletrs() {
+export default function FiltersAccessories() {
     const dispatch = useDispatch();
-      const Value = useSelector(state => state.bid.ShowFillter);
-      const Citys = useSelector(state => state.bid.City);
+    const Value = useSelector(state => state.access.ShowFillter);
+      const Citys = useSelector(state => state.access.City);
     const [show, setShow] = useState(false);
-    const [ages, setAges] = useState([]);
     const [city , setCity] = useState([]);
 
     useEffect(() => {
+    console.log("Value XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX props XXXXXXXXXXXXXXXXXXXX" , Value);
      setShow(Value);
-    }, [Value]);
+}, [Value]);
 
-
-useEffect(() => {       
-    const Ages= ['chick','virgin','second','third','fourth','fifth_more'];
-    let AgesList = [];
-    Ages.map((item) => {
-        AgesList.push({
-                label: I18n.t(item),
-                value: item,
-            });
-        });
-    setAges(AgesList);
-    
-    // City Destractuons ==> 
+useEffect(() => {
     const key = I18n.locale == 'ar' ? 'name_ar' : 'name_en';
     let citesList = [];
     Citys[0].map((item) => {
@@ -45,7 +34,7 @@ useEffect(() => {
             value: item.id,
         });
     });
-    setCity(citesList);
+    setCity([...citesList])
     console.log("PPPPPPPPPPPPPPPPPPPPPPPPPPPP" , city)
 }, [Citys]);
 
@@ -64,7 +53,6 @@ useEffect(() => {
         dispatch(popUpFillter(false));
         dispatch(Locations(data.location));
         dispatch(Price(data.Price));
-        dispatch(Age(data.Age));
     }
     
     return (
@@ -85,23 +73,6 @@ useEffect(() => {
                                              <Text style={Presets.PopupTitelText}>Filter</Text>
                                         </View>
                                         <View style={Presets.AlertMessage}>
-                                            <View >
-                                            <Text style={Presets.AddNameText}>
-                                                {I18n.t(data.Age)}
-                                            </Text>
-                                            <Picker
-                                            mode={Platform.OS === 'android' ? 'dropdown' : 'dialog'}
-                                            selectedValue={data.Age}
-                                            style={{position: 'relative' , bottom : 33 , left :55}}
-                                            onValueChange={(itemValue) =>
-                                            setData({...data , Age:itemValue})
-                                            }>
-                                            {ages.map((item) => 
-                                                    <Picker.Item label={item.label} value={item.value} />
-                                                )}
-                                            </Picker>
-
-                                            </View>
                                             <View>
                                                 <Text>Price</Text>
                                                 <Slider

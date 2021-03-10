@@ -21,7 +21,7 @@ export default function About({navigation}) {
             <View style={{alignItems:"center",flex:1}}>
                   <View style={Presets.HeaderPage}>
                       <Text style={Presets.HeaderText} >
-                      About
+                      {I18n.t('Abouts')}
                       </Text>
                   </View>
                    <View style={Presets.Show}>

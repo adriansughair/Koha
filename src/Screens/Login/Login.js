@@ -87,7 +87,7 @@ const Login = ({props}) => {
                                 onPress={() => navigation.navigate('Register')}>
                                 <Text style={Presets.RegisterLink}>
                                 {I18n.t('RegisterLink')}
-                                <Text style={Presets.RegisterText}>  {I18n.t('Register')}</Text>
+                                <Text style={Presets.RegisterText}>{I18n.t('Register')}</Text>
                             </Text>
                             </TouchableOpacity>
                     </View>

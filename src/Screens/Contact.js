@@ -74,7 +74,7 @@ export default function Contact({navigation}) {
             <View style={{alignItems:"center",flex:1}}>
                   <View style={Presets.HeaderPage}>
                       <Text style={Presets.HeaderText} >
-                            Contact Us
+                            {I18n.t('Contact_Us')}
                       </Text>
                   </View>
                    <View style={Presets.ContactForm}>
@@ -82,7 +82,7 @@ export default function Contact({navigation}) {
                                         <View style={Presets.PopupInput2}>
                                             <TextInput
                                                 style={Presets.PopupInputText2}
-                                                placeholder="Name"
+                                                placeholder={I18n.t('Name')}
                                                 onChangeText={(value) =>
                                                     setData({...data, name: value})
                                                 }
@@ -92,7 +92,7 @@ export default function Contact({navigation}) {
                                         <View style={Presets.PopupInput2}>
                                              <TextInput
                                                 style={Presets.PopupInputText2}
-                                                placeholder="Email"
+                                                placeholder={I18n.t('Email')}
                                                 onChangeText={(value) =>
                                                     setData({...data, email: value})
                                                 }
@@ -102,7 +102,7 @@ export default function Contact({navigation}) {
                                         <View style={Presets.PopupInput2}>
                                             <TextInput
                                                 style={Presets.PopupInputText2}
-                                                placeholder="Subject"
+                                                placeholder={I18n.t('Subject')}
                                                 onChangeText={(value) =>
                                                     setData({...data, subject: value})
                                                 }
@@ -112,7 +112,7 @@ export default function Contact({navigation}) {
                                         <View style={Presets.PopupInput}>
                                             <TextInput
                                                 style={Presets.PopupInputText}
-                                                placeholder="About me"
+                                                placeholder={I18n.t("About_mes")}
                                                 textAlignVertical={'top'}
                                                 onChangeText={(value) =>
                                                     setData({...data, message: value})
@@ -125,7 +125,7 @@ export default function Contact({navigation}) {
                                                 onPress={() => handleSubmit()}
                                         >
                                             <Text style={Presets.PopupText}>
-                                                Send
+                                                {I18n.t('Send')}
                                             </Text>
                                         </TouchableOpacity>
                                     </View>

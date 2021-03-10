@@ -19,14 +19,14 @@ export default function AdminMessage({navigation}) {
     const [show, setShow] = useState(false);
     const [user, setUser] = useState(useSelector((state) => state.user.user));
     const [data, setData] = useState({
-        user_id:user.id,
-        message:null
+        user_id: user.id,
+        message: null
         });
 
 
         const validate = () => {
             if (data.message == null || data.message == '') {
-                alert(I18n.t('full_name') + ' ' + I18n.t('is_required'));
+                alert(I18n.t('Meassge_is_required'));
                 return false;
             }
             return true;
@@ -43,9 +43,9 @@ export default function AdminMessage({navigation}) {
                 const response = await post(optoins);
                 await response.json().then((json) => {
                     if (response.status == 200) {
-                        setData({
-                            message:null
-                        })
+                        // setData({
+                        //     message:null
+                        // })
                         setShow(true);
                     } else {
                         if (json.data.phone) {
@@ -56,11 +56,6 @@ export default function AdminMessage({navigation}) {
             }
         };
 
-
-    const Done = () => {
-        setShow(false);
-    };
-
     return (
         <Layout>
             <ImageBackground
@@ -70,14 +65,14 @@ export default function AdminMessage({navigation}) {
             <View style={[Presets.fullScreen,{alignItems:"center",flex:1}]}>
                   <View style={Presets.HeaderPage}>
                       <Text style={Presets.HeaderText} >
-                          Message Admin
+                          {I18n.t('Message_Admin')}
                       </Text>
                   </View>
                    <View style={Presets.AdminMessage}>
                          <TextInput
                             style={Presets.AdminMessageText}
                             textAlignVertical={'top'}
-                            placeholder="type your message here..."
+                            placeholder={I18n.t('Admin_Input_placeholder')}
                             onChangeText={(value) =>
                                 setData({...data, message: value})
                             }
@@ -88,7 +83,7 @@ export default function AdminMessage({navigation}) {
                         style={Presets.PopupButtom}
                         onPress={() => handleSubmit()}
                         >
-                        <Text style={Presets.PopupText}>Send</Text>
+                        <Text style={Presets.PopupText}>{I18n.t('Send')}</Text>
                     </TouchableOpacity>
                     {/* ######################### Alert message ################################ */}
                     <Modal transparent={true}
@@ -112,8 +107,7 @@ export default function AdminMessage({navigation}) {
                                         </View>
                                         <View style={Presets.AlertMessage}>
                                              <Text 
-                                                 style={Presets.AlertText}
-                                                >
+                                                 style={Presets.AlertText}>
                                                 Your Message has been sent successfully
                                             </Text>
                                             <View style={{borderRadius:100,
@@ -129,7 +123,7 @@ export default function AdminMessage({navigation}) {
                                         </View>
                                         <TouchableOpacity 
                                                 style={Presets.PopupButtom}
-                                                onPress={() => Done()}
+                                                onPress={() => setShow(false)}
                                         >
                                             <Text style={Presets.PopupText}>
                                                 OK

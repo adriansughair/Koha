@@ -21,7 +21,7 @@ export default function RegisterIndex({navigation}) {
 
     const validate = (data) => {
         if (data.name == null || data.name == '') {
-            alert(I18n.t('full_name') + ' ' + I18n.t('is_required'));
+            alert(I18n.t('name') + ' ' + I18n.t('is_required'));
             return false;
         }else if (data.phone == null || data.phone == '') {
             alert(I18n.t('phone_number') + ' ' + I18n.t('is_required'));
@@ -29,8 +29,11 @@ export default function RegisterIndex({navigation}) {
         }else if (data.password == null || data.password == '') {
             alert(I18n.t('password') + ' ' + I18n.t('is_required'));
             return false;
-        }else if (data.password !== data.confirmPassword ) {
+        }else if (data.password == null || data.password == '') {
             alert(I18n.t('password') + ' ' + I18n.t('is_required'));
+            return false;
+        }else if (data.email == null || data.email == '') {
+            alert(I18n.t('Email') + ' ' + I18n.t('is_required'));
             return false;
         }else if (data.password.length < 8) {
             alert(I18n.t('password_must_be_at_least_8_characters'));
@@ -50,6 +53,7 @@ export default function RegisterIndex({navigation}) {
             };
             const response = await post(optoins);
             await response.json().then((json) => {
+                console.log(json);
                 if (json.message == 'User register successfully.') {
                     setStatus('success');
                 } else {

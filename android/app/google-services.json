@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "588907945724",
+    "firebase_url": "https://koha-ec38d-default-rtdb.firebaseio.com",
+    "project_id": "koha-ec38d",
+    "storage_bucket": "koha-ec38d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588907945724:android:ff1fdab47b6647ef6f0179",
+        "android_client_info": {
+          "package_name": "com.koha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588907945724-mlu2t2nih3hc8otqum7rgc1ec9r92oin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCq3T1B8gRGKUzeMcupybeKIaFiThnlOuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588907945724-mlu2t2nih3hc8otqum7rgc1ec9r92oin.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
