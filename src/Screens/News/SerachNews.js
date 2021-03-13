@@ -64,29 +64,16 @@ function SerachNews  ({ navigation , props , route }) {
         
     return (
         <Layout>
-        <ImageBackground
+        <View
                 source={require('../../assest/img/BackGround.png')}
                 style={{width:"100%",alignItems:'center'}}
             >
-             <View style={Presets.searchInput}>
-                <TextInput
-                        style={Presets.textInput5}
-                        placeholder={'Search'}
-                />
-                <TouchableOpacity style={{alignItems:'center',justifyContent:'center',padding:12,margin:10,backgroundColor:"#F6A939",borderRadius:15}}>
-                        <Icon
-                            name="search"
-                            size={20}
-                            color={ colors.white}
-                        />
-                </TouchableOpacity>
-            </View>
             <ScrollView style={Presets.offerContinarNew}>
                 {data.map((item) => 
                     renderitem(item)
                 )} 
             </ScrollView>     
-    </ImageBackground>
+        </View>
     </Layout>
     )
 }

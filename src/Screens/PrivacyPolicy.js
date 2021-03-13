@@ -14,21 +14,16 @@ export default function PrivacyPolicy({navigation}) {
 
     return (
         <Layout>
-            <ImageBackground
-                source={require('../assest/img/BackGround.png')}
-                style={{width:"100%",height:height*1}}
-            >
             <View style={{alignItems:"center",flex:1}}>
                   <View style={Presets.HeaderPage}>
                       <Text style={Presets.HeaderText} >
                             Privacy & Policy
                       </Text>
                   </View>
-                   <View style={Presets.Show}>
+                   <View style={[Presets.Show,{height:height*0.5}]}>
                          
                     </View>
             </View>
-            </ImageBackground>
         </Layout>
             
     );

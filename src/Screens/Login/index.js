@@ -26,7 +26,7 @@ export default function LoginIndex({navigation}) {
                 navigation.navigate('App');
                 break;
             default:
-                alert('Your phone or password is invaild');
+                alert(I18n.t('Your_phone_or_password_is_invaild'));
         }
     };
     

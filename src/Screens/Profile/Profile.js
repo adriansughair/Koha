@@ -26,7 +26,7 @@ export default function Profile({props}) {
                              style={Presets.profileImage}
                              source={require('../../assest/img/profile.jpg')}/>
                   </View>
-                  <View style={Presets.Info}>
+                  <View style={[Presets.Info,{backgroundColor:colors.white}]}>
                             <View style={Presets.InfoName}>
                                 <Text style={Presets.TextName}>
                                     {data.name}
@@ -44,7 +44,7 @@ export default function Profile({props}) {
                                 </Text>
                             </View>
                    </View>
-                   <View style={Presets.AboutView}>
+                   <View style={[Presets.AboutView,{backgroundColor:colors.white}]}>
                             <View style={Presets.AboutHead}>
                                 <Text style={Presets.AboutHeadText}>
                                         {I18n.t('About')}

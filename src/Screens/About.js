@@ -14,10 +14,6 @@ export default function About({navigation}) {
 
     return (
         <Layout>
-            <ImageBackground
-                source={require('../assest/img/BackGround.png')}
-                style={{width:"100%",height:height*0.7}}
-            >
             <View style={{alignItems:"center",flex:1}}>
                   <View style={Presets.HeaderPage}>
                       <Text style={Presets.HeaderText} >
@@ -30,7 +26,6 @@ export default function About({navigation}) {
                          </Text>
                     </View>
             </View>
-            </ImageBackground>
         </Layout>
             
     );

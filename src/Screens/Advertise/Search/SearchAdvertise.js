@@ -42,7 +42,7 @@ console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" , val
                 size={25}
                 color={'#755734'}
                 />
-            <Text>Sort By</Text>
+            <Text>   {I18n.t('Sort_By')}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.footeritem} 
         onPress={() => dispatch(popUpFillter(true))}
@@ -52,7 +52,7 @@ console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" , val
                 size={25}
                 color={'#755734'}
                 />
-            <Text>Filter</Text>
+            <Text>   {I18n.t('Filter')}</Text>
         </TouchableOpacity>
         </View>
         }
@@ -87,9 +87,8 @@ console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" , val
                             </View>
         </TouchableOpacity>
     return (
-        <ImageBackground
-                source={require('../../../assest/img/BackGround.png')}
-                style={{width:"100%",alignItems:'center'}}
+        <View
+            style={{width:"100%",alignItems:'center'}}
             >
              <View style={Presets.searchInput}>
                 <TextInput
@@ -116,16 +115,17 @@ console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" , val
             {Footer()}
             <Sort />
             <Filtes />
-    </ImageBackground>
+    </View>
     );
 }
 const styles = StyleSheet.create({
     footerContainer: {
         flexDirection: 'row',
         padding: 5,
+        // height:50,
         backgroundColor:colors.white,
         width:"100%",
-        alignItems: 'flex-end',
+        // alignItems: 'flex-end',
     },
     footerIcon: {
         height: 25,
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     },
     footerAddIcon: {
         backgroundColor: colors.orange,
-        padding: 5,
+        padding: 15,
         borderRadius: 30,
         height: 60,
         width: 60,

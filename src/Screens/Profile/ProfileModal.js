@@ -39,12 +39,14 @@ export default function Profile({props}) {
                                              <Text style={Presets.PopupTitelText}>
                                                   Edit Your Profile
                                              </Text>
-                                             <Icon
-                                                name="edit"
-                                                size={20}
-                                                color={colors.white}
-                                                style={{backgroundColor:colors.default,padding:2,borderRadius:5}}
-                                            />
+                                             <TouchableOpacity onPress={() => Update()}>
+                                                <Icon
+                                                        name="edit"
+                                                        size={20}
+                                                        color={colors.white}
+                                                        style={{backgroundColor:colors.default,padding:2,borderRadius:5}}
+                                                    />
+                                             </TouchableOpacity>
                                         </View>
                                         <View style={Presets.PopupInput2}>
                                             <TextInput

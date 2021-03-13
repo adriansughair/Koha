@@ -80,13 +80,16 @@ export default function index() {
 
 function App() {
   const Drawer = createDrawerNavigator();
-
+  const user = useSelector((state) => state.user);
+  
   return (
       <Drawer.Navigator
           drawerContentOptions={{
           activeTintColor:colors.default,
-          itemStyle: {marginVertical: 5},
-        }}
+          itemStyle: {marginVertical: 5}}}
+          drawerStyle={{
+            // height: 550,
+            }}
         drawerContent={(props) => <Menu {...props} />}>
       <Drawer.Screen 
           options={{
@@ -95,7 +98,8 @@ function App() {
           }} 
           name="Home" 
           component={HomeIndex} 
-      /> 
+      />
+      {user.loggedIn && ( 
       <Drawer.Screen 
           options={{
             headerShown: false,
@@ -105,6 +109,8 @@ function App() {
           name="Profile" 
           component={ProfileIndex} 
       />
+      )}
+      {user.loggedIn && (
       <Drawer.Screen 
           options={{
             headerShown: false,
@@ -114,6 +120,7 @@ function App() {
           name="AdminMessage" 
           component={AdminMessage} 
       />
+      )}
       <Drawer.Screen 
           options={{
             headerShown: false,
@@ -150,7 +157,6 @@ function App() {
           name="Settings" 
           component={Settings} 
       />
-
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="AddOffer" component={UploadIndex} />
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="AddAdvertise" component={AddAdvertise} />
       <Drawer.Screen options={{headerShown: false,drawerLabel: () => null}} name="Search" component={Search} />

@@ -7,7 +7,7 @@ import colors from '../../../styles/colors';
 import I18n from '../../../I18n';
 import {useDispatch,useSelector} from 'react-redux';
 import {GetBidOffer} from '../../../providers/routes';
-import {get} from '../../../providers/provider';
+import {post} from '../../../providers/provider';
 import ShowBidding from './ShowBidding'
 
 const height = Dimensions.get('window').height;
@@ -38,10 +38,14 @@ export default function ShowBiddingIndex({navigation,route}) {
     const getData = async () =>{
         
         const options = {
-                route: `${GetBidOffer}/${route.params.id}`
-                    };
+                route: GetBidOffer,
+                body:{
+                    id:route.params.id,
+                    lang:I18n.locale
+                    }
+                };
         
-        const response = await get(options);
+        const response = await post(options);
         await response.json().then(
             (json) => handleResponse(response, json),
             (err) => console.log('err : ', err),

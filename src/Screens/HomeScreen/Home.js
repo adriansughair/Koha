@@ -48,8 +48,7 @@ export default function Home({props}) {
     }
 
     return (
-            <ImageBackground
-                source={require('../../assest/img/BackGround.png')}
+            <View
                 style={{width:"100%",height:height*0.8}}
             >
             <View style={Presets.HomeScreen}>
@@ -145,6 +144,6 @@ export default function Home({props}) {
                       </View> 
                   </View>
             </View>
-            </ImageBackground>
+            </View>
     );
 }

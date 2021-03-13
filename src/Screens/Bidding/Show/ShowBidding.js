@@ -136,7 +136,7 @@ export default function ShowBidding({props}) {
                                 {(user !==null && user.id !== data.user_id) &&
                                     <View style={{width:'90%',alignItems:'center'}}>
                                         <View>
-                                            <Text style={Presets.AddBid}>Add your Bid</Text>
+                                            <Text style={Presets.AddBid}>{I18n.t('Add_your_Bid')}</Text>
                                         </View>
                                         <View style={Presets.Bid}>
                                             <TextInput
@@ -151,26 +151,26 @@ export default function ShowBidding({props}) {
                                                 style={Presets.BidButtoun}
                                                 onPress={()=>handleSubmit()}
                                             > 
-                                                <Text style={Presets.BidButtounText} >Add</Text>
+                                                <Text style={Presets.BidButtounText} >{I18n.t('Add')}</Text>
                                             </TouchableOpacity>                                
                                         </View>
                                     </View>
                                 }
                                 <View>
-                                    <Text style={Presets.AddBid} >All bids for this offer</Text>
+                                    <Text style={Presets.AddBid}>{I18n.t('All_bids_for_this_offer')}</Text>
                                     <View>
                                         <View style={{flexDirection: 'row'}}>
                                             <Text style={[Presets.offerProprty3]}>
-                                                Bid price
+                                                {I18n.t('Bid_price')}
                                             </Text>
                                             <Text style={[Presets.offerProprty3,{width:'20%'}]}>
-                                                User  
+                                                {I18n.t('User')}  
                                             </Text>
                                             <Text style={[Presets.offerProprty3]}>
-                                                Date  
+                                                {I18n.t('Date')}  
                                             </Text>
                                             <Text style={[Presets.offerProprty3]}>
-                                                Time  
+                                                {I18n.t('Time')}  
                                             </Text>
                                         </View>
                                     </View>

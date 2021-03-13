@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
         paddingBottom: 15,
         paddingTop: 15,
         alignItems: 'flex-end',
+        backgroundColor:'rgba(255, 255, 255, 0.9)'
     },
     footerIcon: {
         height: 25,

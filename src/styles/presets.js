@@ -10,7 +10,7 @@ module.exports = StyleSheet.create({
     fullScreen: {
         height: '100%',
         width: '100%',
-        backgroundColor: 'white',
+        backgroundColor:'rgba(255, 255, 255, 0.4)'
     },
     flexRow: {
         flexDirection: 'row',
@@ -236,8 +236,9 @@ module.exports = StyleSheet.create({
 
     },
     Textcategory:{
-        fontSize:12,
+        fontSize:14,
         color:colors.default,
+        fontFamily: 'Montserrat-Bold',
     },
     Imgcategory:{
         width:'100%',
@@ -271,14 +272,13 @@ module.exports = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         borderRadius:25,
-        borderWidth:0.5,
         paddingBottom:10,
         paddingTop:10,
-        // shadowColor: '#000',
-        // shadowOffset: { width: 1, height: 1 },
-        // shadowOpacity:  0.4,
-        // shadowRadius: 3,
-        // elevation: 0.5,
+        shadowColor: '#000',
+        shadowOffset: { width: 1, height: 1 },
+        shadowOpacity:  0.4,
+        shadowRadius: 3,
+        elevation: 5,
     },
     TextName:{
         fontSize:26,
@@ -319,7 +319,6 @@ module.exports = StyleSheet.create({
         width:"90%",
         height:220,
         borderRadius:25,
-        borderWidth:0.5,
         padding:20,
     },
     About:{

@@ -62,8 +62,7 @@ export default function AppNews({props}) {
                             </View>
         </View>
     return (
-        <ImageBackground
-                source={require('../../assest/img/BackGround.png')}
+        <View
                 style={{width:"100%",alignItems:'center'}}
             >
             <ScrollView style={[Presets.offerContinarNew,{height:'100%'}]}>
@@ -71,7 +70,7 @@ export default function AppNews({props}) {
                     renderitem(item)
                 )}  
             </ScrollView>  
-    </ImageBackground>
+    </View>
     );
 }
 

@@ -67,11 +67,8 @@ export default function Contact({navigation}) {
 
     return (
         <Layout>
-            <ImageBackground
-                source={require('../assest/img/BackGround.png')}
-                style={{width:"100%",height:height*0.9}}
-            >
-            <View style={{alignItems:"center",flex:1}}>
+            
+            <View style={{alignItems:"center",flex:1,paddingBottom:20}}>
                   <View style={Presets.HeaderPage}>
                       <Text style={Presets.HeaderText} >
                             {I18n.t('Contact_Us')}
@@ -131,7 +128,6 @@ export default function Contact({navigation}) {
                                     </View>
                                 </View>
             </View>
-            </ImageBackground>
         </Layout>
             
     );

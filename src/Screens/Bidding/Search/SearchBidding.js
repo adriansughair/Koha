@@ -38,7 +38,7 @@ export default function SearchView({props}) {
                 size={25}
                 color={'#755734'}
                 />
-            <Text>Sort By</Text>
+            <Text>   {I18n.t('Sort_By')}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.footeritem} 
          onPress={() => dispatch(popUpFillter(true))}
@@ -48,7 +48,7 @@ export default function SearchView({props}) {
                 size={25}
                 color={'#755734'}
                 />
-            <Text>Filter</Text>
+            <Text>   {I18n.t('Filter')}</Text>
         </TouchableOpacity>
         </View>
         }
@@ -89,9 +89,8 @@ export default function SearchView({props}) {
                             </View>
         </TouchableOpacity>
     return (
-        <ImageBackground
-                source={require('../../../assest/img/BackGround.png')}
-                style={{width:"100%",alignItems:'center'}}
+        <View
+             style={{width:"100%",alignItems:'center'}}
             >
              <View style={Presets.searchInput}>
                 <TextInput
@@ -118,7 +117,7 @@ export default function SearchView({props}) {
             {Footer()}
             <BidFillter/>
             <BidSort/>
-    </ImageBackground>
+    </View>
     );
 }
 const styles = StyleSheet.create({

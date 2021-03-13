@@ -78,4 +78,14 @@ export default {
     new : 'New' , 
     Status : 'Status' ,
     PikerItems : 'Picker Age' ,
+    Your_phone_or_password_is_invaild:'Your phone or password is invaild',
+    All_bids_for_this_offer:'All bids for this offer',
+    Bid_price:'Bid price',
+    User:'User',
+    Date:'Date',
+    Time:'Time',
+    Add:'Add',
+    Add_your_Bid:'Add your Bid',
+    winner:'The winner',
+    Finished_Bids:'Finished Bids'
 };

@@ -13,7 +13,7 @@ export default function Header() {
 
     return (
         <View style={Presets.headerContainer}>
-            {route !== 'Home' && (
+            {route !== 'Home' ? (
                 <TouchableOpacity
                     style={{
                         // flexDirection: direction, 
@@ -26,6 +26,13 @@ export default function Header() {
                         size={30}
                         color={colors.grayLink}
                     />
+                </TouchableOpacity>
+            ):(
+                <TouchableOpacity
+                    style={{
+                        padding: 30 
+                        }}
+                    >
                 </TouchableOpacity>
             )
             }

@@ -58,11 +58,7 @@ export default function AdminMessage({navigation}) {
 
     return (
         <Layout>
-            <ImageBackground
-                source={require('../assest/img/BackGround.png')}
-                style={{width:"100%",height:height*0.75}}
-            >
-            <View style={[Presets.fullScreen,{alignItems:"center",flex:1}]}>
+            <View style={{alignItems:"center",flex:1}}>
                   <View style={Presets.HeaderPage}>
                       <Text style={Presets.HeaderText} >
                           {I18n.t('Message_Admin')}
@@ -134,7 +130,6 @@ export default function AdminMessage({navigation}) {
                         </Modal>
                     {/* ######################### Alert message ################################ */}
             </View>
-            </ImageBackground>
         </Layout>
             
     );

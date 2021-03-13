@@ -42,10 +42,10 @@ export default function BidNews({props}) {
                                 </Text>
                                 <View style={{flexDirection: 'row'}}>
                                     <Text style={[Presets.offerProprty,{backgroundColor:'#3969F626',color:'#3969F6',}]}>
-                                        {item.sex}
+                                        {item.type}
                                     </Text>
                                     <Text style={[Presets.offerProprty,{backgroundColor:'#F8C05531',color:'#F8C055',}]}>
-                                        {item.Age} Years 
+                                        {I18n.t(item.Age)}
                                     </Text>
                                 </View>
                                 <View style={Presets.Bidding}>
@@ -55,7 +55,7 @@ export default function BidNews({props}) {
                                 </View>
                                 <View style={Presets.owner}>
                                         <Text style={Presets.ownerText}>
-                                            The winner
+                                            {I18n.t('winner')}
                                         </Text>
                                         <Text style={Presets.ownerVal}>
                                             {item.owner}
@@ -64,13 +64,12 @@ export default function BidNews({props}) {
                             </View>
         </View>
     return (
-        <ImageBackground
-                source={require('../../assest/img/BackGround.png')}
+        <View
                 style={{width:"100%",alignItems:'center'}}
             >
             <View style={Presets.FinishBidHeader}>
                 <Text style={Presets.FinishBidText}>
-                    Finished Bids
+                    {I18n.t('Finished_Bids')}
                 </Text>
             </View>
             <ScrollView style={Presets.offerContinar}>
@@ -78,7 +77,7 @@ export default function BidNews({props}) {
                     renderitem(item)
                 )}      
             </ScrollView>
-    </ImageBackground>
+    </View>
     );
 }
 const styles = StyleSheet.create({

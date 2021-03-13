@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import {TouchableOpacity, View, Text, TextInput,ScrollView,ImageBackground,Dimensions,Image,Modal} from 'react-native';
+import {TouchableOpacity, View, Text, TextInput,Linking,ScrollView,ImageBackground,Dimensions,Image,Modal} from 'react-native';
 import {Presets} from '../../../styles';
 import Layout from '../../../components/layout/Layout';
 import colors from '../../../styles/colors';
@@ -29,13 +29,13 @@ export default function ShowBidding({props}) {
                                     </Text>
                                 </View>
                                 <View style={Presets.Contact}>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={() => Linking.openURL(`whatsapp://send?text='hi'&phone=+962781234567`)}>
                                         <Image 
                                             style={Presets.ContactImage}
                                             source={require('../../../assest/img/icons2/whatsapp.png')}
                                          />
                                     </TouchableOpacity>
-                                    <TouchableOpacity>
+                                    <TouchableOpacity onPress={() => Linking.openURL(`tel:${data.phone}`)}>
                                         <Image 
                                             style={Presets.ContactImage}
                                             source={require('../../../assest/img/icons2/telephone.png')}

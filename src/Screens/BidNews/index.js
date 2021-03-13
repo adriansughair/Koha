@@ -6,7 +6,7 @@ import colors from '../../styles/colors'
 import Loading from '../../components/Loading'
 import Layout from '../../components/layout/Layout';
 import BidNews from './BidNews';
-
+import I18n from '../../I18n';
 export default function BidNewsIndex({navigation}) {
     
     const height = Dimensions.get('window').height;
@@ -32,7 +32,7 @@ export default function BidNewsIndex({navigation}) {
     
     const getData = async () =>{
         
-        const options = {route: FinishedBids};
+        const options = {route: `${FinishedBids}/${I18n.locale}`};
         const response = await get(options);
         await response.json().then(
             (json) => handleResponse(response, json),

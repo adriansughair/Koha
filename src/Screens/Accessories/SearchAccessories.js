@@ -100,8 +100,7 @@ export default function SearchAccessories({navigation , route}) {
     };
     return (
     <Layout>
-            <ImageBackground
-                source={require('../../assest/img/BackGround.png')}
+            <View
                 style={{width:"100%",height:height*0.77,alignItems:'center'}}
             >
              <View style={Presets.searchInput}>
@@ -128,7 +127,7 @@ export default function SearchAccessories({navigation , route}) {
                 </ScrollView>
               <SortAccessories/>
               <FiltersAccessories/>     
-    </ImageBackground>
+    </View>
     <View style={styles.footerContainer}>
         <TouchableOpacity style={styles.footeritem} onPress={() => dispatch(Show(true))}>
                     <Icon
@@ -136,7 +135,7 @@ export default function SearchAccessories({navigation , route}) {
                         size={25}
                         color={'#755734'}
                     />
-                    <Text>Sort By</Text>
+                    <Text>   {I18n.t('Sort_By')}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.footeritem} onPress={() => dispatch(popUpFillter(true))}>
                   <Icon
@@ -144,7 +143,7 @@ export default function SearchAccessories({navigation , route}) {
                         size={25}
                         color={'#755734'}
                     />
-                    <Text>Filter</Text>
+                    <Text>   {I18n.t('Filter')}</Text>
         </TouchableOpacity>
     </View>
     </Layout>
@@ -154,8 +153,10 @@ const styles = StyleSheet.create({
     footerContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
+        height: 50,
         paddingBottom: 15,
-        alignItems: 'flex-end',
+        // alignItems: 'flex-end',
+        backgroundColor:colors.white
     },
     footerIcon: {
         height: 25,
